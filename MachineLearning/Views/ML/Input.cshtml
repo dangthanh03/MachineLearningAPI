@@ -1,0 +1,104 @@
+﻿@model PredictionInputModel
+
+@{
+    ViewData["Title"] = "Input Data for Flight Rating";
+}
+
+<h2>Input Data for Flight Rating</h2>
+
+<form asp-action="Predict" method="post">
+    <div>
+        <label>Gender:</label>
+        <input asp-for="Gender" class="form-control" />
+    </div>
+    <div>
+        <label>Customer Type:</label>
+        <input asp-for="CustomerType" class="form-control" />
+    </div>
+    <div>
+        <label>Age:</label>
+        <input asp-for="Age" type="number" class="form-control" />
+    </div>
+    <div>
+        <label>Type of Travel:</label>
+        <input asp-for="TypeOfTravel" class="form-control" />
+    </div>
+    <div>
+        <label>Class:</label>
+        <input asp-for="Class" class="form-control" />
+    </div>
+    <div>
+        <label>Flight Distance:</label>
+        <input asp-for="FlightDistance" type="number" class="form-control" />
+    </div>
+    <div>
+        <label>Inflight Wifi Service:</label>
+        <input asp-for="InflightWifiService" type="number" min="1" max="5" class="form-control" />
+    </div>
+    <div>
+        <label>Departure/Arrival Time Convenient:</label>
+        <input asp-for="DepartureArrivalTimeConvenient" type="number" min="1" max="5" class="form-control" />
+    </div>
+    <div>
+        <label>Ease of Online Booking:</label>
+        <input asp-for="EaseOfOnlineBooking" type="number" min="1" max="5" class="form-control" />
+    </div>
+    <div>
+        <label>Gate Location:</label>
+        <input asp-for="GateLocation" type="number" min="1" max="5" class="form-control" />
+    </div>
+    <div>
+        <label>Food and Drink:</label>
+        <input asp-for="FoodAndDrink" type="number" min="1" max="5" class="form-control" />
+    </div>
+    <div>
+        <label>Online Boarding:</label>
+        <input asp-for="OnlineBoarding" type="number" min="1" max="5" class="form-control" />
+    </div>
+    <div>
+        <label>Seat Comfort:</label>
+        <input asp-for="SeatComfort" type="number" min="1" max="5" class="form-control" />
+    </div>
+    <div>
+        <label>Inflight Entertainment:</label>
+        <input asp-for="InflightEntertainment" type="number" min="1" max="5" class="form-control" />
+    </div>
+    <div>
+        <label>On-Board Service:</label>
+        <input asp-for="OnBoardService" type="number" min="1" max="5" class="form-control" />
+    </div>
+    <div>
+        <label>Leg Room Service:</label>
+        <input asp-for="LegRoomService" type="number" min="1" max="5" class="form-control" />
+    </div>
+    <div>
+        <label>Baggage Handling:</label>
+        <input asp-for="BaggageHandling" type="number" min="1" max="5" class="form-control" />
+    </div>
+    <div>
+        <label>Checkin Service:</label>
+        <input asp-for="CheckinService" type="number" min="1" max="5" class="form-control" />
+    </div>
+    <div>
+        <label>Inflight Service:</label>
+        <input asp-for="InflightService" type="number" min="1" max="5" class="form-control" />
+    </div>
+    <div>
+        <label>Cleanliness:</label>
+        <input asp-for="Cleanliness" type="number" min="1" max="5" class="form-control" />
+    </div>
+    <div>
+        <label>Departure Delay in Minutes:</label>
+        <input asp-for="DepartureDelayInMinutes" type="number" class="form-control" />
+    </div>
+    <div>
+        <label>Arrival Delay in Minutes:</label>
+        <input asp-for="ArrivalDelayInMinutes" type="number" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Predict</button>
+</form>
+
+@if (ViewBag.Prediction != null)
+{
+    <h3>Prediction Result: @ViewBag.Prediction </h3>
+}
